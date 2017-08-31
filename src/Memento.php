@@ -27,7 +27,8 @@ class Memento
 
     /**
      * Memento constructor.
-     * @param $state
+     *
+     * @param string $state
      */
     public function __construct(string $state)
     {
@@ -35,7 +36,7 @@ class Memento
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getState(): string
     {
