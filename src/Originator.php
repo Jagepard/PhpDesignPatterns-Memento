@@ -43,7 +43,7 @@ class Originator
      */
     public function printState(): void
     {
-        print sprintf("State setted %s\n", $this->state);
+        print sprintf("State setted %s\n", $this->getState());
     }
 
     /**
