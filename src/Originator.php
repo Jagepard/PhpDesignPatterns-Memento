@@ -49,7 +49,7 @@ class Originator
     /**
      * @return Memento
      */
-    public function getMemento(): Memento
+    public function saveState(): Memento
     {
         return new Memento($this->state);
     }
