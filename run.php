@@ -6,7 +6,7 @@ $originator = new \Behavioral\Memento\Originator();
 $caretaker  = new \Behavioral\Memento\Caretaker();
 
 $originator->setState("On");
-$caretaker->setMemento($originator->getMemento());
+$caretaker->setMemento($originator->saveState());
 $originator->printState();
 
 $originator->setState("Off");
