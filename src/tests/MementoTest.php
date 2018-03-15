@@ -23,7 +23,7 @@ class MementoTest extends PHPUnit_Framework_TestCase
         $this->caretaker  = new \Behavioral\Memento\Caretaker();
 
         $this->getOriginator()->setState("On");
-        $this->getCaretaker()->setMemento($this->getOriginator()->saveState());
+        $this->getCaretaker()->setMemento(new Behavioral\Memento\Memento($this->getOriginator()->getState()));
     }
 
     public function testInstance(): void
