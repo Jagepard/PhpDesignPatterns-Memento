@@ -47,19 +47,11 @@ class Originator
     }
 
     /**
-     * @return Memento
-     */
-    public function saveState(): Memento
-    {
-        return new Memento($this->state);
-    }
-
-    /**
      * @param Memento $memento
      */
     public function getRestoringState(Memento $memento)
     {
-        echo sprintf("Restoring state...\n");
+        echo "Restoring state...\n";
         $this->state = $memento->getState();
     }
 }

@@ -1,12 +1,15 @@
+#! usr/bin/env php
 <?php
+
+namespace Behavioral\Memento;
 
 require_once 'vendor/autoload.php';
 
-$originator = new \Behavioral\Memento\Originator();
-$caretaker  = new \Behavioral\Memento\Caretaker();
+$originator = new Originator();
+$caretaker  = new Caretaker();
 
 $originator->setState("On");
-$caretaker->setMemento($originator->saveState());
+$caretaker->setMemento(new Memento($originator->getState()));
 $originator->printState();
 
 $originator->setState("Off");
