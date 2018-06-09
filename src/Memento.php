@@ -1,14 +1,10 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 /**
- * Date: 22.09.16
- * Time: 11:33
- *
  * @author    : Korotkov Danila <dankorot@gmail.com>
- * @copyright Copyright (c) 2016, Korotkov Danila
- * @license   http://www.gnu.org/licenses/gpl.html GNU GPLv3.0
+ * @license   https://mit-license.org/ MIT
  */
 
 namespace Behavioral\Memento;
@@ -21,18 +17,17 @@ class Memento
 {
 
     /**
-     * @var
+     * @var string
      */
     protected $state;
 
     /**
      * Memento constructor.
-     *
-     * @param string $state
+     * @param Originator $originator
      */
-    public function __construct(string $state)
+    public function __construct(Originator $originator)
     {
-        $this->state = $state;
+        $this->state = $originator->getState();
     }
 
     /**
@@ -40,6 +35,8 @@ class Memento
      */
     public function getState(): string
     {
+        print "Restoring state...\n";
+
         return $this->state;
     }
 }

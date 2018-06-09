@@ -3,8 +3,8 @@
     "description" : "PhpDesignPatterns",
     "type"        : "library",
     "keywords"    : [
-        "patterns",
-        "design-patterns"
+        "memento",
+        "design-pattern"
     ],
     "license"     : "MIT",
     "authors"     : [
@@ -15,22 +15,26 @@
             "role"    : "Developer"
         }
     ],
-
     "support"     : {
         "email": "jagepard@yandex.ru",
         "skype": "jagepard.ru"
     },
-
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev"      : {
+        "phpunit/phpunit": "^7"
+    },
     "autoload": {
         "psr-4": {
             "Behavioral\\Memento\\":"src/"
         }
     },
-
-    "require": {
-        "php": ">=7.0"
+    "autoload-dev"     : {
+        "psr-4": {
+            "Behavioral\\Memento\\Tests\\":"tests/"
+        }
     },
-
     "minimum-stability": "dev",
     "prefer-stable" : true
 }
