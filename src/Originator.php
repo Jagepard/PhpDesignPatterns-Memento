@@ -1,11 +1,10 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 /**
  * @author    : Korotkov Danila <dankorot@gmail.com>
- * @copyright Copyright (c) 2017, Korotkov Danila
- * @license   http://www.gnu.org/licenses/gpl.html GNU GPLv3.0
+ * @license   https://mit-license.org/ MIT
  */
 
 namespace Behavioral\Memento;
@@ -18,7 +17,7 @@ class Originator
 {
 
     /**
-     * @var
+     * @var string
      */
     protected $state;
 
@@ -43,15 +42,6 @@ class Originator
      */
     public function printState(): void
     {
-        print sprintf("State setted %s\n", $this->getState());
-    }
-
-    /**
-     * @param Memento $memento
-     */
-    public function getRestoringState(Memento $memento)
-    {
-        echo "Restoring state...\n";
-        $this->state = $memento->getState();
+        printf("State set %s\n", $this->getState());
     }
 }

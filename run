@@ -8,12 +8,12 @@ require_once 'vendor/autoload.php';
 $originator = new Originator();
 $caretaker  = new Caretaker();
 
-$originator->setState("On");
-$caretaker->setMemento(new Memento($originator->getState()));
+$originator->setState("on");
+$caretaker->setMemento(new Memento($originator));
 $originator->printState();
 
-$originator->setState("Off");
+$originator->setState("off");
 $originator->printState();
 
-$originator->getRestoringState($caretaker->getMemento());
+$originator->setState($caretaker->getMemento()->getState());
 $originator->printState();
