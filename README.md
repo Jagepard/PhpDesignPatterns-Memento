@@ -5,5 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-498e7f.svg)](https://mit-license.org/)
 -----
 
-# Memento
+# Memento | [API](https://github.com/Jagepard/PhpDesignPatterns-Memento/blob/master/docs.md "Documentation API")
 Хранитель
+
+![Iterator](https://github.com/Jagepard/PhpDesignPatterns-Memento/blob/master/UML.png)
