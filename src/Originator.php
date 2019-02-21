@@ -13,35 +13,31 @@ namespace Behavioral\Memento;
  * Class Originator
  * @package Behavioral\Memento
  */
-class Originator
+class Originator implements OriginatorInterface
 {
+    /**
+     * @var TypeInterface
+     */
+    private $state;
 
     /**
-     * @var string
+     * @param TypeInterface $state
      */
-    protected $state;
-
-    /**
-     * @param string $state
-     */
-    public function setState(string $state)
+    public function setState(TypeInterface $state): void
     {
         $this->state = $state;
     }
 
     /**
-     * @return string
+     * @return TypeInterface
      */
-    public function getState(): string
+    public function getState(): TypeInterface
     {
         return $this->state;
     }
 
-    /**
-     *
-     */
     public function printState(): void
     {
-        printf("State set %s\n", $this->getState());
+        printf("State set %s\n", $this->getState()->getName());
     }
 }

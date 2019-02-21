@@ -13,26 +13,25 @@ namespace Behavioral\Memento;
  * Class Caretaker
  * @package Behavioral\Memento
  */
-class Caretaker
+class Caretaker implements CaretakerInterface
 {
-
     /**
-     * @var Memento
+     * @var MementoInterface
      */
     protected $memento;
 
     /**
-     * @return mixed
+     * @return MementoInterface
      */
-    public function getMemento(): Memento
+    public function getMemento(): MementoInterface
     {
         return $this->memento;
     }
 
     /**
-     * @param \Behavioral\Memento\Memento $memento
+     * @param MementoInterface $memento
      */
-    public function setMemento(Memento $memento)
+    public function setMemento(MementoInterface $memento): void
     {
         $this->memento = $memento;
     }

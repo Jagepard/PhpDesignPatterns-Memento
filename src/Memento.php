@@ -13,27 +13,26 @@ namespace Behavioral\Memento;
  * Class Memento
  * @package Behavioral\Memento
  */
-class Memento
+class Memento implements MementoInterface
 {
-
     /**
-     * @var string
+     * @var TypeInterface
      */
-    protected $state;
+    private $state;
 
     /**
      * Memento constructor.
-     * @param Originator $originator
+     * @param OriginatorInterface $originator
      */
-    public function __construct(Originator $originator)
+    public function __construct(OriginatorInterface $originator)
     {
         $this->state = $originator->getState();
     }
 
     /**
-     * @return string
+     * @return TypeInterface
      */
-    public function getState(): string
+    public function getState(): TypeInterface
     {
         print "Restoring state...\n";
 
