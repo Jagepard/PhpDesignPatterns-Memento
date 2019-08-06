@@ -8,12 +8,14 @@ require_once 'vendor/autoload.php';
 $originator = new Originator();
 $caretaker  = new Caretaker();
 
-$originator->setState(new StateType('on'));
-$caretaker->setMemento(new Memento($originator));
-$originator->printState();
-
-$originator->setState(new StateType('off'));
-$originator->printState();
-
-$originator->setState($caretaker->getMemento()->getState());
-$originator->printState();
+try {
+    $originator->setState(new StateType('on'));
+    $caretaker->setMemento(new Memento($originator));
+    $originator->printState();
+    $originator->setState(new StateType('off'));
+    $originator->printState();
+    $originator->setState($caretaker->getMemento()->getState());
+    $originator->printState();
+} catch (\Throwable $th) {
+    echo 'Caught exception: ',  $th->getMessage(), "\n";
+}
