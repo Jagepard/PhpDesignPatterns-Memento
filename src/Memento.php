@@ -9,10 +9,6 @@ declare(strict_types=1);
 
 namespace Behavioral\Memento;
 
-/**
- * Class Memento
- * @package Behavioral\Memento
- */
 class Memento implements MementoInterface
 {
     /**

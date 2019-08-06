@@ -9,10 +9,6 @@ declare(strict_types=1);
 
 namespace Behavioral\Memento;
 
-/**
- * Class Caretaker
- * @package Behavioral\Memento
- */
 class Caretaker implements CaretakerInterface
 {
     /**

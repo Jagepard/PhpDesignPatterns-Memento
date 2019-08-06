@@ -17,10 +17,6 @@ use Behavioral\Memento\OriginatorInterface;
 use Behavioral\Memento\StateType;
 use PHPUnit\Framework\TestCase as PHPUnit_Framework_TestCase;
 
-/**
- * Class MementoTest
- * @package Behavioral\Memento\Tests
- */
 class MementoTest extends PHPUnit_Framework_TestCase
 {
     /**

@@ -7,10 +7,6 @@
 
 namespace Behavioral\Memento;
 
-/**
- * Interface OriginatorInterface
- * @package Behavioral\Memento
- */
 interface OriginatorInterface
 {
     /**

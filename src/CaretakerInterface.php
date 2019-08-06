@@ -7,10 +7,6 @@
 
 namespace Behavioral\Memento;
 
-/**
- * Interface CaretakerInterface
- * @package Behavioral\Memento
- */
 interface CaretakerInterface
 {
     /**
