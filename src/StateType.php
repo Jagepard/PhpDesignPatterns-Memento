@@ -9,10 +9,6 @@ declare(strict_types=1);
 
 namespace Behavioral\Memento;
 
-/**
- * Class StateType
- * @package Behavioral\Memento
- */
 class StateType implements TypeInterface
 {
     /**

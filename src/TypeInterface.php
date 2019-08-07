@@ -7,10 +7,6 @@
 
 namespace Behavioral\Memento;
 
-/**
- * Interface TypeInterface
- * @package Behavioral\Memento
- */
 interface TypeInterface
 {
     /**

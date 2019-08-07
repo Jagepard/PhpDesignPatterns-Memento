@@ -9,10 +9,6 @@ declare(strict_types=1);
 
 namespace Behavioral\Memento;
 
-/**
- * Class Originator
- * @package Behavioral\Memento
- */
 class Originator implements OriginatorInterface
 {
     /**
