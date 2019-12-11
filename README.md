@@ -6,8 +6,6 @@
 -----
 
 # Memento | [API](https://github.com/Jagepard/PhpDesignPatterns-Memento/blob/master/docs.md "Documentation API")
-```php run``` Запустить исполнение шаблона в терминале
-
-Хранитель
+```php run``` execute in terminal
 
 ![Iterator](https://github.com/Jagepard/PhpDesignPatterns-Memento/blob/master/UML.png)
