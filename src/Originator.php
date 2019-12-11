@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 /**
- * @author    : Korotkov Danila <dankorot@gmail.com>
- * @license   https://mit-license.org/ MIT
+ * @author  : Jagepard <jagepard@yandex.ru>
+ * @license https://mit-license.org/ MIT
  */
 
 namespace Behavioral\Memento;
@@ -12,28 +12,23 @@ namespace Behavioral\Memento;
 class Originator implements OriginatorInterface
 {
     /**
-     * @var TypeInterface
+     * @var string
      */
     private $state;
 
     /**
-     * @param TypeInterface $state
+     * @param string $state
      */
-    public function setState(TypeInterface $state): void
+    public function setState(string $state): void
     {
         $this->state = $state;
     }
 
     /**
-     * @return TypeInterface
+     * @return string
      */
-    public function getState(): TypeInterface
+    public function getState(): string
     {
         return $this->state;
-    }
-
-    public function printState(): void
-    {
-        printf("State set %s\n", $this->getState()->getName());
     }
 }
