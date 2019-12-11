@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @author    : Korotkov Danila <dankorot@gmail.com>
- * @license   https://mit-license.org/ MIT
+ * @author  : Jagepard <jagepard@yandex.ru>
+ * @license https://mit-license.org/ MIT
  */
 
 namespace Behavioral\Memento;
@@ -10,14 +10,12 @@ namespace Behavioral\Memento;
 interface OriginatorInterface
 {
     /**
-     * @param TypeInterface $state
+     * @return string
      */
-    public function setState(TypeInterface $state): void;
+    public function getState(): string;
 
     /**
-     * @return TypeInterface
+     * @param string $state
      */
-    public function getState(): TypeInterface;
-
-    public function printState(): void;
+    public function setState(string $state): void;
 }
