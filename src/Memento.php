@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 /**
- * @author    : Korotkov Danila <dankorot@gmail.com>
- * @license   https://mit-license.org/ MIT
+ * @author  : Jagepard <jagepard@yandex.ru>
+ * @license https://mit-license.org/ MIT
  */
 
 namespace Behavioral\Memento;
@@ -12,7 +12,7 @@ namespace Behavioral\Memento;
 class Memento implements MementoInterface
 {
     /**
-     * @var TypeInterface
+     * @var string
      */
     private $state;
 
@@ -26,12 +26,10 @@ class Memento implements MementoInterface
     }
 
     /**
-     * @return TypeInterface
+     * @return string
      */
-    public function getState(): TypeInterface
+    public function getState(): string
     {
-        print "Restoring state...\n";
-
         return $this->state;
     }
 }
