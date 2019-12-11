@@ -6,16 +6,18 @@ namespace Behavioral\Memento;
 require_once 'vendor/autoload.php';
 
 $originator = new Originator();
-$caretaker  = new Caretaker();
+$caretaker = new Caretaker();
 
 try {
-    $originator->setState(new StateType('on'));
+    $originator->setState('on');
     $caretaker->setMemento(new Memento($originator));
-    $originator->printState();
-    $originator->setState(new StateType('off'));
-    $originator->printState();
+    echo $originator->getState()."\n";
+
+    $originator->setState('off');
+    echo $originator->getState()."\n";
+
     $originator->setState($caretaker->getMemento()->getState());
-    $originator->printState();
+    echo "Restoring state...\n".$originator->getState()."\n";
 } catch (\Throwable $th) {
-    echo 'Caught exception: ',  $th->getMessage(), "\n";
+    echo 'Caught exception: ', $th->getMessage(), "\n";
 }
