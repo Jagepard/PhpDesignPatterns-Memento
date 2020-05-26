@@ -11,25 +11,15 @@ namespace Behavioral\Memento;
 
 class Memento implements MementoInterface
 {
-    /**
-     * @var string
-     */
-    private $state;
+    private OriginatorInterface $memento;
 
-    /**
-     * Memento constructor.
-     * @param OriginatorInterface $originator
-     */
     public function __construct(OriginatorInterface $originator)
     {
-        $this->state = $originator->getState();
+        $this->memento = $originator;
     }
 
-    /**
-     * @return string
-     */
-    public function getState(): string
+    public function getMemento(): OriginatorInterface
     {
-        return $this->state;
+        return $this->memento;
     }
 }

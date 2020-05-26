@@ -5,7 +5,16 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-498e7f.svg)](https://mit-license.org/)
 -----
 
-# Memento | [API](https://github.com/Jagepard/PhpDesignPatterns-Memento/blob/master/docs.md "Documentation API")
+# Memento 
 ```php run``` execute in terminal
 
-![Iterator](https://github.com/Jagepard/PhpDesignPatterns-Memento/blob/master/UML.png)
+## Result:
+```
+state is on
+state is off
+state is empty
+Restoring state...
+state is off
+Restoring state...
+state is on
+```

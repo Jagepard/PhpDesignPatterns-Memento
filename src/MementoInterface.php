@@ -9,14 +9,7 @@ namespace Behavioral\Memento;
 
 interface MementoInterface
 {
-    /**
-     * Memento constructor.
-     * @param OriginatorInterface $originator
-     */
     public function __construct(OriginatorInterface $originator);
 
-    /**
-     * @return string
-     */
-    public function getState(): string;
+    public function getMemento(): OriginatorInterface;
 }
