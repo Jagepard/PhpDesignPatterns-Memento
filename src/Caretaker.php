@@ -11,24 +11,15 @@ namespace Behavioral\Memento;
 
 class Caretaker implements CaretakerInterface
 {
-    /**
-     * @var MementoInterface
-     */
-    protected $memento;
+    protected array $history = [];
 
-    /**
-     * @return MementoInterface
-     */
-    public function getMemento(): MementoInterface
+    public function undo(): MementoInterface
     {
-        return $this->memento;
+        return unserialize(array_pop($this->history));
     }
 
-    /**
-     * @param MementoInterface $memento
-     */
-    public function setMemento(MementoInterface $memento): void
+    public function save(MementoInterface $memento): void
     {
-        $this->memento = $memento;
+        $this->history[] = serialize($memento);
     }
 }
