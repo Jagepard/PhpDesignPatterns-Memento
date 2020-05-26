@@ -6,18 +6,25 @@ namespace Behavioral\Memento;
 require_once 'vendor/autoload.php';
 
 $originator = new Originator();
-$caretaker = new Caretaker();
+$caretaker  = new Caretaker();
 
 try {
-    $originator->setState('on');
-    $caretaker->setMemento(new Memento($originator));
-    echo $originator->getState()."\n";
+    $originator->setState("state is on");
+    $caretaker->save(new Memento($originator));
+    echo $originator->getState() . "\n";
 
-    $originator->setState('off');
-    echo $originator->getState()."\n";
+    $originator->setState("state is off");
+    $caretaker->save(new Memento($originator));
+    echo $originator->getState() . "\n";
 
-    $originator->setState($caretaker->getMemento()->getState());
-    echo "Restoring state...\n".$originator->getState()."\n";
+    $originator->setState("state is empty");
+    echo $originator->getState() . "\n";
+
+    $originator->setState($caretaker->undo()->getMemento()->getState());
+    echo "Restoring state...\n" . $originator->getState() . "\n";
+
+    $originator->setState($caretaker->undo()->getMemento()->getState());
+    echo "Restoring state...\n" . $originator->getState() . "\n";
 } catch (\Throwable $th) {
-    echo 'Caught exception: ', $th->getMessage(), "\n";
+    echo "Caught exception: ", $th->getMessage(), "\n";
 }
