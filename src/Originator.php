@@ -11,22 +11,13 @@ namespace Behavioral\Memento;
 
 class Originator implements OriginatorInterface
 {
-    /**
-     * @var string
-     */
-    private $state;
+    private string $state;
 
-    /**
-     * @param string $state
-     */
     public function setState(string $state): void
     {
         $this->state = $state;
     }
 
-    /**
-     * @return string
-     */
     public function getState(): string
     {
         return $this->state;
