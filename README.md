@@ -10,11 +10,9 @@
 
 ## Result:
 ```
-state is on
-state is off
-state is empty
-Restoring state...
-state is off
-Restoring state...
-state is on
+state is on || 16-07-2020 15:58:23
+state is off || 16-07-2020 15:58:24
+state is empty || 16-07-2020 15:58:25
+Restoring state... state is off || 16-07-2020 15:58:24
+Restoring state... state is on || 16-07-2020 15:58:23
 ```
