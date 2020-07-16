@@ -9,23 +9,22 @@ declare(strict_types=1);
 
 namespace Behavioral\Memento\Tests;
 
-use Behavioral\Memento\{Memento, Caretaker, Originator, CaretakerInterface, OriginatorInterface};
+use Behavioral\Memento\{Caretaker, Originator, CaretakerInterface, OriginatorInterface};
 use PHPUnit\Framework\TestCase as PHPUnit_Framework_TestCase;
 
 class MementoTest extends PHPUnit_Framework_TestCase
 {
     private CaretakerInterface $caretaker;
-
     private OriginatorInterface $originator;
 
     protected function setUp(): void
     {
         $this->originator = new Originator();
-        $this->caretaker  = new Caretaker();
+        $this->caretaker  = new Caretaker($this->originator);
 
-        $this->originator->setState('on');
-        $this->caretaker->save(new Memento($this->originator));
-        $this->originator->setState('off');
+        $this->originator->setState("on");
+        $this->caretaker->save();
+        $this->originator->setState("off");
     }
 
     public function testInstance(): void
@@ -36,12 +35,12 @@ class MementoTest extends PHPUnit_Framework_TestCase
 
     public function testState(): void
     {
-        $this->assertEquals('off', $this->originator->getState());
+        $this->assertEquals("off", $this->originator->getState());
     }
 
     public function testRestoringState(): void
     {
-        $this->originator->setState($this->caretaker->undo()->getMemento()->getState());
-        $this->assertEquals('on', $this->originator->getState());
+        $this->caretaker->undo();
+        $this->assertEquals("on", $this->originator->getState());
     }
 }

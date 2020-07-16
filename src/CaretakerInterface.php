@@ -9,7 +9,6 @@ namespace Behavioral\Memento;
 
 interface CaretakerInterface
 {
-    public function undo(): MementoInterface;
-
-    public function save(MementoInterface $memento): void;
+    public function undo(): void;
+    public function save(): void;
 }

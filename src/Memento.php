@@ -11,14 +11,14 @@ namespace Behavioral\Memento;
 
 class Memento implements MementoInterface
 {
-    private OriginatorInterface $memento;
+    private array $memento;
 
-    public function __construct(OriginatorInterface $originator)
+    public function __construct(array $memento)
     {
-        $this->memento = $originator;
+        $this->memento = $memento;
     }
 
-    public function getMemento(): OriginatorInterface
+    public function getMemento(): array
     {
         return $this->memento;
     }
