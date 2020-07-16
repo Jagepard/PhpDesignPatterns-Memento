@@ -6,25 +6,25 @@ namespace Behavioral\Memento;
 require_once 'vendor/autoload.php';
 
 $originator = new Originator();
-$caretaker  = new Caretaker();
+$caretaker  = new Caretaker($originator);
 
 try {
     $originator->setState("state is on");
-    $caretaker->save(new Memento($originator));
-    echo $originator->getState() . "\n";
+    $caretaker->save();
+    echo "{$originator->getState()} || {$originator->getDate()}\n";
 
     $originator->setState("state is off");
-    $caretaker->save(new Memento($originator));
-    echo $originator->getState() . "\n";
+    $caretaker->save();
+    echo "{$originator->getState()} || {$originator->getDate()}\n";
 
     $originator->setState("state is empty");
-    echo $originator->getState() . "\n";
+    echo "{$originator->getState()} || {$originator->getDate()}\n";
 
-    $originator->setState($caretaker->undo()->getMemento()->getState());
-    echo "Restoring state...\n" . $originator->getState() . "\n";
+    $caretaker->undo();
+    echo "Restoring state... {$originator->getState()} || {$originator->getDate()}\n";
 
-    $originator->setState($caretaker->undo()->getMemento()->getState());
-    echo "Restoring state...\n" . $originator->getState() . "\n";
+    $caretaker->undo();
+    echo "Restoring state... {$originator->getState()} || {$originator->getDate()}\n";
 } catch (\Throwable $th) {
-    echo "Caught exception: ", $th->getMessage(), "\n";
+    printf("%s", "Caught exception: " . $th->getMessage() . "\n");
 }

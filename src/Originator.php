@@ -12,14 +12,32 @@ namespace Behavioral\Memento;
 class Originator implements OriginatorInterface
 {
     private string $state;
+    private string $date;
 
     public function setState(string $state): void
     {
         $this->state = $state;
+        $this->date  = date("d-m-Y H:i:s");
     }
 
     public function getState(): string
     {
         return $this->state;
+    }
+
+    public function getDate(): string
+    {
+        return $this->date;
+    }
+
+
+    public function resetState(string $state): void
+    {
+        $this->state = $state;
+    }
+
+    public function resetDate(string $date): void
+    {
+        $this->date = $date;
     }
 }
