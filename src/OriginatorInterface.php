@@ -10,6 +10,5 @@ namespace Behavioral\Memento;
 interface OriginatorInterface
 {
     public function getState(): string;
-
-    public function setState(string $state): void;
+    public function setState(string $state, string $date = null): void;
 }
