@@ -22,15 +22,13 @@ class Caretaker implements CaretakerInterface
     public function undo(): void
     {
         $memento = array_pop($this->history)->getMemento();
-        $this->originator->resetState($memento["state"]);
-        $this->originator->resetDate($memento["date"]);
+        $this->originator->setState($memento["state"], $memento["date"]);
     }
 
     public function save(): void
     {
         sleep(1); // for example
-        $this->history[] = new Memento(
-            [
+        $this->history[] = new Memento([
                 "state" => $this->originator->getState(),
                 "date"  => $this->originator->getDate()
             ]

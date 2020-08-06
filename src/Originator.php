@@ -14,10 +14,10 @@ class Originator implements OriginatorInterface
     private string $state;
     private string $date;
 
-    public function setState(string $state): void
+    public function setState(string $state, string $date = null): void
     {
         $this->state = $state;
-        $this->date  = date("d-m-Y H:i:s");
+        $this->date  = (!isset($date)) ? date("d-m-Y H:i:s") : $date;
     }
 
     public function getState(): string
@@ -28,16 +28,5 @@ class Originator implements OriginatorInterface
     public function getDate(): string
     {
         return $this->date;
-    }
-
-
-    public function resetState(string $state): void
-    {
-        $this->state = $state;
-    }
-
-    public function resetDate(string $date): void
-    {
-        $this->date = $date;
     }
 }
