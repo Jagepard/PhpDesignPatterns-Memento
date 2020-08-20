@@ -6,7 +6,7 @@
 -----
 
 # Memento | [API](https://github.com/Jagepard/PhpDesignPatterns-Memento/blob/master/api.md)
-```php run``` execute in terminal
+```php main.php``` execute in terminal
 
 ## Result:
 ```
