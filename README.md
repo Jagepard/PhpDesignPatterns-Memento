@@ -6,7 +6,7 @@
 -----
 
 # Memento 
-```php run``` execute in terminal
+```php main.php``` execute in terminal
 
 ## Result:
 ```
