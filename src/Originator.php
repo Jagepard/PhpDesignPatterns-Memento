@@ -17,7 +17,7 @@ class Originator implements OriginatorInterface
     public function setState(string $state, string $date = null): void
     {
         $this->state = $state;
-        $this->date  = (!isset($date)) ? date("d-m-Y H:i:s") : $date;
+        $this->date  = $date ?? date("d-m-Y H:i:s");
     }
 
     public function getState(): string
