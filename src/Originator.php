@@ -29,4 +29,9 @@ class Originator implements OriginatorInterface
     {
         return $this->date;
     }
+
+    public function printLog(string $addlInfo = ''): void
+    {
+        echo "{$addlInfo}{$this->state} || {$this->date}\n";
+    }
 }

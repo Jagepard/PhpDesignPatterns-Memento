@@ -8,22 +8,22 @@ $originator = new Originator();
 $caretaker  = new Caretaker($originator);
 
 try {
-    $originator->setState("state is on");
+    $originator->setState("on");
     $caretaker->save();
-    echo "{$originator->getState()} || {$originator->getDate()}\n";
+    $originator->printLog("State is ");
 
-    $originator->setState("state is off");
+    $originator->setState("off");
     $caretaker->save();
-    echo "{$originator->getState()} || {$originator->getDate()}\n";
+    $originator->printLog("State is ");
 
-    $originator->setState("state is empty");
-    echo "{$originator->getState()} || {$originator->getDate()}\n";
+    $originator->setState("empty");
+    $originator->printLog("State is ");
 
     $caretaker->undo();
-    echo "Restoring state... {$originator->getState()} || {$originator->getDate()}\n";
+    $originator->printLog("Restoring state... ");
 
     $caretaker->undo();
-    echo "Restoring state... {$originator->getState()} || {$originator->getDate()}\n";
+    $originator->printLog("Restoring state... ");
 } catch (\Throwable $th) {
     printf("%s", "Caught exception: " . $th->getMessage() . "\n");
 }
