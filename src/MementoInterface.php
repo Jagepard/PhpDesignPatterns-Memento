@@ -9,5 +9,8 @@ namespace Behavioral\Memento;
 
 interface MementoInterface
 {
+    /**
+     * @return array
+     */
     public function getMemento(): array;
 }
