@@ -9,6 +9,13 @@ namespace Behavioral\Memento;
 
 interface CaretakerInterface
 {
+    /**
+     * @return void
+     */
     public function undo(): void;
+
+    /**
+     * @return void
+     */
     public function save(): void;
 }

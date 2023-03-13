@@ -1,72 +1,69 @@
 ## Table of contents
+- [Behavioral\Memento\Caretaker](#behavioral_memento_caretaker)
+- [Behavioral\Memento\CaretakerInterface](#behavioral_memento_caretakerinterface)
+- [Behavioral\Memento\Memento](#behavioral_memento_memento)
+- [Behavioral\Memento\MementoInterface](#behavioral_memento_mementointerface)
+- [Behavioral\Memento\Originator](#behavioral_memento_originator)
+- [Behavioral\Memento\OriginatorInterface](#behavioral_memento_originatorinterface)
+<hr>
 
-- [\Behavioral\Memento\Caretaker](#class-behavioralmementocaretaker)
-- [\Behavioral\Memento\CaretakerInterface (interface)](#interface-behavioralmementocaretakerinterface)
-- [\Behavioral\Memento\Memento](#class-behavioralmementomemento)
-- [\Behavioral\Memento\MementoInterface (interface)](#interface-behavioralmementomementointerface)
-- [\Behavioral\Memento\Originator](#class-behavioralmementooriginator)
-- [\Behavioral\Memento\OriginatorInterface (interface)](#interface-behavioralmementooriginatorinterface)
+<a id="behavioral_memento_caretaker"></a>
 
-<hr />
-
-### Class: \Behavioral\Memento\Caretaker
-
+### Class: Behavioral\Memento\Caretaker
+##### implements [Behavioral\Memento\CaretakerInterface](#behavioral_memento_caretakerinterface)
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>__construct(</strong><em>[\Behavioral\Memento\OriginatorInterface](#interface-behavioralmementooriginatorinterface)</em> <strong>$originator</strong>)</strong> : <em>void</em> |
-| public | <strong>save()</strong> : <em>void</em> |
-| public | <strong>undo()</strong> : <em>void</em> |
+|public|<em><strong>__construct</strong>( Behavioral\Memento\OriginatorInterface $originator )</em><br>Accepts an object<br>Принимает объект в работу|
+|public|<em><strong>undo</strong>(): void</em><br>Restores the previous state<br>Восстанавливает предыдущее состояние|
+|public|<em><strong>save</strong>(): void</em><br>Stores data about the current state of an object<br>Сохраняет данные о текущем состоянии объекта|
 
-*This class implements [\Behavioral\Memento\CaretakerInterface](#interface-behavioralmementocaretakerinterface)*
 
-<hr />
+<a id="behavioral_memento_caretakerinterface"></a>
 
-### Interface: \Behavioral\Memento\CaretakerInterface
-
+### Class: Behavioral\Memento\CaretakerInterface
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>save()</strong> : <em>void</em> |
-| public | <strong>undo()</strong> : <em>void</em> |
+|abstract public|<em><strong>undo</strong>(): void</em><br>|
+|abstract public|<em><strong>save</strong>(): void</em><br>|
 
-<hr />
 
-### Class: \Behavioral\Memento\Memento
+<a id="behavioral_memento_memento"></a>
 
+### Class: Behavioral\Memento\Memento
+##### implements [Behavioral\Memento\MementoInterface](#behavioral_memento_mementointerface)
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>__construct(</strong><em>array</em> <strong>$memento</strong>)</strong> : <em>void</em> |
-| public | <strong>getMemento()</strong> : <em>mixed</em> |
+|public|<em><strong>__construct</strong>( array $memento )</em><br>Receives data about the current state of an object<br>Принимает данные о текущем состоянии объекта|
+|public|<em><strong>getMemento</strong>(): array</em><br>Gets the persisted data about the state of an object<br>Получает сохраненные данные о состоянии объекта|
 
-*This class implements [\Behavioral\Memento\MementoInterface](#interface-behavioralmementomementointerface)*
 
-<hr />
+<a id="behavioral_memento_mementointerface"></a>
 
-### Interface: \Behavioral\Memento\MementoInterface
-
+### Class: Behavioral\Memento\MementoInterface
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>getMemento()</strong> : <em>mixed</em> |
+|abstract public|<em><strong>getMemento</strong>(): array</em><br>|
 
-<hr />
 
-### Class: \Behavioral\Memento\Originator
+<a id="behavioral_memento_originator"></a>
 
+### Class: Behavioral\Memento\Originator
+##### implements [Behavioral\Memento\OriginatorInterface](#behavioral_memento_originatorinterface)
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>getDate()</strong> : <em>mixed</em> |
-| public | <strong>getState()</strong> : <em>mixed</em> |
-| public | <strong>resetDate(</strong><em>\string</em> <strong>$date</strong>)</strong> : <em>void</em> |
-| public | <strong>resetState(</strong><em>\string</em> <strong>$state</strong>)</strong> : <em>void</em> |
-| public | <strong>setState(</strong><em>\string</em> <strong>$state</strong>)</strong> : <em>void</em> |
+|public|<em><strong>setState</strong>( string $state  ?string $date ): void</em><br>Sets the current state of the object and fixes the installation time<br>Устанавливает текущее состояние объекта и фиксирует время установки|
+|public|<em><strong>getState</strong>(): string</em><br>Gets the current state<br>Получает данные о текущем состоянии|
+|public|<em><strong>getDate</strong>(): string</em><br>Gets the commit time of the current state<br>Получает время фиксации текущего состояния|
+|public|<em><strong>printLog</strong>( string $addlInfo ): void</em><br>Displays information about the current state<br>Выводит информацию о текущем состоянии|
 
-*This class implements [\Behavioral\Memento\OriginatorInterface](#interface-behavioralmementooriginatorinterface)*
 
-<hr />
+<a id="behavioral_memento_originatorinterface"></a>
 
-### Interface: \Behavioral\Memento\OriginatorInterface
-
+### Class: Behavioral\Memento\OriginatorInterface
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>getState()</strong> : <em>mixed</em> |
-| public | <strong>setState(</strong><em>\string</em> <strong>$state</strong>)</strong> : <em>void</em> |
+|abstract public|<em><strong>getState</strong>(): string</em><br>|
+|abstract public|<em><strong>setState</strong>( string $state  ?string $date ): void</em><br>|
+<hr>
 
+###### created with [Rudra-Documentation-Collector](#https://github.com/Jagepard/Rudra-Documentation-Collector)
