@@ -11,7 +11,6 @@ namespace Behavioral\Memento;
 
 class Caretaker implements CaretakerInterface
 {
-    private OriginatorInterface $originator;
     private array $history = [];
 
     /**
@@ -21,10 +20,7 @@ class Caretaker implements CaretakerInterface
      *
      * @param  OriginatorInterface $originator
      */
-    public function __construct(OriginatorInterface $originator)
-    {
-        $this->originator = $originator;
-    }
+    public function __construct(private OriginatorInterface $originator){}
 
     /**
      * Restores the previous state
@@ -35,8 +31,12 @@ class Caretaker implements CaretakerInterface
      */
     public function undo(): void
     {
+        if (empty($this->history)) {
+            return;
+        }
+
         $memento = array_pop($this->history)->getMemento();
-        $this->originator->setState($memento["state"], $memento["date"]);
+        $this->originator->restore($memento["state"], $memento["date"]);
     }
 
     /**
