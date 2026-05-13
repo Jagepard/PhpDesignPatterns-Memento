@@ -19,5 +19,5 @@ interface OriginatorInterface
      * @param  string|null $date
      * @return void
      */
-    public function setState(string $state, string $date = null): void;
+    public function setState(string $state): void;
 }

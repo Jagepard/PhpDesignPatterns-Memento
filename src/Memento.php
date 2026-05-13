@@ -11,8 +11,6 @@ namespace Behavioral\Memento;
 
 class Memento implements MementoInterface
 {
-    private array $memento;
-
     /**
      * Receives data about the current state of an object
      * --------------------------------------------------
@@ -20,10 +18,7 @@ class Memento implements MementoInterface
      *
      * @param  array $memento
      */
-    public function __construct(array $memento)
-    {
-        $this->memento = $memento;
-    }
+    public function __construct(private array $memento){}
 
     /**
      * Gets the persisted data about the state of an object

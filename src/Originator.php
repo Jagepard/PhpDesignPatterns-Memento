@@ -12,21 +12,20 @@ namespace Behavioral\Memento;
 class Originator implements OriginatorInterface
 {
     private string $state;
-    private string $date;
+    private \DateTime $date;
 
     /**
      * Sets the current state of the object and fixes the installation time
      * --------------------------------------------------------------------
      * Устанавливает текущее состояние объекта и фиксирует время установки
      *
-     * @param  string      $state
-     * @param  string|null $date
+     * @param  string $state
      * @return void
      */
-    public function setState(string $state, string $date = null): void
+    public function setState(string $state): void
     {
         $this->state = $state;
-        $this->date  = $date ?? date("d-m-Y H:i:s");
+        $this->date  = new \DateTime();
     }
 
     /**
@@ -48,7 +47,7 @@ class Originator implements OriginatorInterface
      *
      * @return string
      */
-    public function getDate(): string
+    public function getDate(): \DateTime
     {
         return $this->date;
     }
@@ -63,6 +62,21 @@ class Originator implements OriginatorInterface
      */
     public function printLog(string $addlInfo = ''): void
     {
-        echo "{$addlInfo}{$this->state} || {$this->date}\n";
+        printf("%s %s %s\n", $addlInfo, $this->date->format('d-m-Y H:i:s'), $this->state);
+    }
+
+    /**
+     * Restores the state of the object
+     * --------------------------------
+     * Восстанавливает состояние объекта
+     * 
+     * @param  string    $state
+     * @param  \DateTime $date
+     * @return void
+     */
+    public function restore(string $state, \DateTime $date): void
+    {
+        $this->state = $state;
+        $this->date  = $date;
     }
 }

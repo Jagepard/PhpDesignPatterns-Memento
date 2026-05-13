@@ -10,9 +10,9 @@ declare(strict_types=1);
 namespace Behavioral\Memento\Tests;
 
 use Behavioral\Memento\{Caretaker, Originator, CaretakerInterface, OriginatorInterface};
-use PHPUnit\Framework\TestCase as PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
-class MementoTest extends PHPUnit_Framework_TestCase
+class MementoTest extends TestCase
 {
     private CaretakerInterface $caretaker;
     private OriginatorInterface $originator;
