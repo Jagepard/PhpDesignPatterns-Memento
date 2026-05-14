@@ -25,6 +25,9 @@ try {
 
     $caretaker->undo();
     $originator->printLog("Restoring state...");
+
+    $caretaker->redo();
+    $originator->printLog("Restoring state...");
 } catch (\Throwable $th) {
     printf("%s", "Caught exception: " . $th->getMessage() . "\n");
 }
